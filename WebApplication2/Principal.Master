@@ -1,0 +1,86 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Principal.master.cs" Inherits="WebApplication2.Principal" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+    <title></title>
+    <link href="Site.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        #Button1
+        {
+            margin-left: 0px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <div class="page">
+        <div class="header">
+            <div class="title">
+                <asp:Image ID="Image1" runat="server" ImageUrl="~/img/fondo_claro_transparente.png" Width="200px" Height="50px" />
+            </div>
+            <div class="loginDisplay">
+                <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
+                <%--<asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
+                    <AnonymousTemplate>
+                        [ <a href="login.aspx" ID="HeadLoginStatus" runat="server">Iniciar sesión</a> ]
+                    </AnonymousTemplate>
+                    <LoggedInTemplate>
+                        Pantalla de bienvenida <span class="bold"><asp:LoginName ID="HeadLoginName" runat="server" /></span>!
+                        [ <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Cerrar sesión" LogoutPageUrl="~/"/> ]
+                    </LoggedInTemplate>
+                </asp:LoginView>--%>
+            </div>
+            <div class="clear hideSkiplink">
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/busqueda.aspx" Text="Buscar" Value="Buscar"/>
+                        <asp:MenuItem NavigateUrl="~/logout.aspx" Text="Cerrar Sesión" 
+                            Value="Cerrar Sesión"></asp:MenuItem>
+                    </Items>
+                </asp:Menu>
+<%--                <div id="Buscador">
+                <div id="txtBuscador"><asp:TextBox ID="TextBox1" runat="server" Width="234px"></asp:TextBox></div>
+                <div id="btnBuscar"><asp:Button ID="Button1" runat="server" Text="Buscar" 
+                        onclick="Button1_Click" /></div>
+                </div>--%>
+            </div>
+        </div>
+        <div class="main">
+
+        <div id="columnas">
+            <div class="columna_izquierda"> 
+                <asp:Menu ID="Menu1" runat="server" StaticSubMenuIndent="10px" 
+                    BackColor="#FFFFFF" DynamicHorizontalOffset="2" Font-Names="Verdana" 
+                    Font-Size="0.9em" ForeColor="#666666">
+                    <DynamicHoverStyle BackColor="#006600" ForeColor="White" />
+                    <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                    <DynamicMenuStyle BackColor="#FFFFFF" BorderColor="#006600" BorderStyle="Solid" />
+                    <DynamicSelectedStyle BackColor="#1C5E55" />
+                    <StaticHoverStyle BackColor="#006600" ForeColor="White" />
+                    <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                    <StaticSelectedStyle BackColor="#1C5E55" />
+                        </asp:Menu>        </div>
+            <div class="columna_derecha"><asp:ContentPlaceHolder ID="MainContent" runat="server"/></div>            
+        </div>                                                                           
+           </div>
+                            <div class="clear">
+        </div>    
+         </div>   
+    <div class="footer">
+        
+    </div>
+
+<%--    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>--%>
+    </form>
+</body>
+</html>
